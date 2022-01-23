@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Department(models.Model):
@@ -40,10 +41,14 @@ class Employee(models.Model):
     def __str__(self):
         return f'{self.name} - {self.employment_date}'
 
+    def get_absolute_url(self):
+        return reverse('employee', kwargs={'empl_slug': self.slug})
+
     class Meta:
         verbose_name = 'Сотрудник'
         verbose_name_plural = 'Сотрудники'
         ordering = ['-employment_date']
+
 
 
 

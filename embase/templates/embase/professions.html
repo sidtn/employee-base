@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники</title>
+</head>
+<body>
+<ul>
+    {% for p in object_list %}
+        <li>
+            <p><h1>{{ p.name }}</h1></p>
+            <p>{{ p.description }}</p>
+        </li>
+
+    {% endfor %}
+</ul>
+
+</body>
+</html>
