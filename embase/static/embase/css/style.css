@@ -1,0 +1,32 @@
+.head {
+    margin: 0px 0px 5px 0px;
+    padding: 30px;
+    background-color: #999486;
+}
+
+a {
+    text-decoration: none;
+    color: #3D2C29;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #140332;
+}
+
+#exit {
+    font-size: 30px;
+}
+
+#title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav {
+    margin: 0px 0px 5px 0px;
+    padding: 20px;
+    background-color: #999486;
+}
+
+

@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Сотрудники</title>
-</head>
-<body>
-<ul>
-    {% for p in object_list %}
-        <li>
-            <p><h1>{{ p.name }}</h1></p>
-            <p>{{ p.description }}</p>
-        </li>
+{% extends 'embase/base.html' %}
 
-    {% endfor %}
-</ul>
-
-</body>
-</html>
+{% block content %}
+<div id="accordion">
+{% for p in object_list %}
+  <div class="card">
+    <div class="card-header" id="head{{ p.pk }}">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#{{ p.slug }}" aria-expanded="false" aria-controls="{{ p.slug }}">
+          {{ p.name }}
+        </button>
+      </h5>
+    </div>
+    <div id="{{ p.slug }}" class="collapse" aria-labelledby="head{{ p.pk }}" data-parent="#accordion">
+      <div class="card-body">
+        {{ p.description }}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

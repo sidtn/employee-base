@@ -1,15 +1,66 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Главная</title>
-	<link type="text/css" href="{% static 'embase/css/bootstrap.css' %}" rel="stylesheet" />
-    <script src="{% static 'embase/js/bootstrap.js' %}"></script>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 
-<body>
-    <p>Привет</p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Главная</title>
+	<link href="{% static 'embase/css/bootstrap.css' %}" rel="stylesheet">
+	<link href="{% static 'embase/css/style.css' %}" rel="stylesheet">
+	<script src="{% static 'embase/js/scripts.js' %}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row head">
+		<div class="col-md-4">
+            <a id="title" href="#">База сотрудников предприятия</a>
+		</div>
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+            <div class="text-right">
+                <a id="exit" href="#">Выйти</a>
+            </div>
+		</div>
+	</div>
+	<div class="row nav">
+		<div class="col-md-4">
+			<h3 class="text-center">
+                <a href="#">Сотрудники</a>
+			</h3>
+		</div>
+		<div class="col-md-4">
+			<h3 class="text-center">
+				<a href="#">Отделы</a>
+			</h3>
+		</div>
+		<div class="col-md-4">
+			<h3 class="text-center">
+				<a href="#">Справочник должностей</a>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+            {% block content %}
+            {% endblock %}
+        </div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div>Anatoli Piven</div>
+            <div>sid_tn@tut.by</div>
+            <div>Test task for nyblecraft.com</div>
+        </div>
+	</div>
+</div>
+  </body>
 </html>

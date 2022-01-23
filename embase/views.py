@@ -9,7 +9,7 @@ def index(request):
 
 class Professions(ListView):
     model = Position
-    template_name = 'embase/embase.html'
+    template_name = 'embase/professions.html'
 
 
 class Employee(DetailView):
