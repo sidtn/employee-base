@@ -1,7 +1,17 @@
+html, body {
+  height: 100%;
+}
+
 .head {
-    margin: 0px 0px 5px 0px;
-    padding: 30px;
-    background-color: #999486;
+    margin: 0px 60px 5px 60px;
+    padding: 25px;
+    background-color: #799CAB;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 a {
@@ -24,9 +34,78 @@ a:hover {
 }
 
 .nav {
-    margin: 0px 0px 5px 0px;
-    padding: 20px;
-    background-color: #999486;
+    margin: 0px 60px 5px 60px;
+    padding: 15px;
+    background-color: #799CAB;
 }
 
+.content {
+  flex: 1 0 auto;
+}
 
+.card-header {
+    height: 40px;
+}
+
+.card {
+    margin: 0px 0px 2px 80px;
+    border: 2px solid grey;
+}
+
+.btn {
+    color: black;
+    text-decoration: none;
+    padding: 0px 0px;
+}
+
+.btn-block {
+    height: 100px;
+    background: #71ABC4 ;
+    padding: 35px;
+}
+
+.btn-block:hover {
+    height: 100px;
+    background: #4BA1C6 ;
+    padding: 35px;
+}
+
+#accordion {
+    margin: 5px 80px 10px 10px;
+}
+
+.card-header {
+    background-color: #E8F1F4;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.step-links {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pag {
+    border: 1px solid black;
+    padding: 3px;
+    margin: 5px;
+}
+
+.footer {
+    margin: 20px 60px 20px 60px;
+    font-size: 15px;
+    background-color: #C0BCBC;
+    border: 1px solid black;
+    flex: 0 0 auto;
+}
+
+.form-block {
+    padding: 20px 100px 20px 100px;
+}
+
+.form-label {
+    padding: 0px;
+    margin: 0px;
+}

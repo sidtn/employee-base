@@ -5,7 +5,6 @@ from .models import *
 class DepartmentAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'date_create')
     search_fields = ('name',)
-    prepopulated_fields = {'slug': ('name',)}
 
 
 class PositionAdmin(admin.ModelAdmin):

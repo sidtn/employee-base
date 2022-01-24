@@ -1,10 +1,19 @@
 version: "3.9"
 services:
-  postgres:
+  db:
     image: postgres:13.5
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: "embase_db"
       POSTGRES_USER: "testuser"
       POSTGRES_PASSWORD: "qwerty"
     ports:
       - "5432:5432"
+#  web:
+#    build: .
+#    command: python manage.py runserver 0.0.0.0:8000
+#    ports:
+#      - "8000:8000"
+#    depends_on:
+#      - db

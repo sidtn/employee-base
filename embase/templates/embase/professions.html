@@ -2,21 +2,40 @@
 
 {% block content %}
 <div id="accordion">
-{% for p in object_list %}
+{% for prof in professions %}
   <div class="card">
-    <div class="card-header" id="head{{ p.pk }}">
+    <div class="card-header" id="head{{ prof.pk }}">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#{{ p.slug }}" aria-expanded="false" aria-controls="{{ p.slug }}">
-          {{ p.name }}
+        <button class="btn btn-link" data-toggle="collapse" data-target="#{{ prof.slug }}" aria-expanded="false" aria-controls="{{ prof.slug }}">
+          {{ prof.name }}
         </button>
       </h5>
     </div>
-    <div id="{{ p.slug }}" class="collapse" aria-labelledby="head{{ p.pk }}" data-parent="#accordion">
+    <div id="{{ prof.slug }}" class="collapse" aria-labelledby="head{{ prof.pk }}" data-parent="#accordion">
       <div class="card-body">
-        {{ p.description }}
+        {{ prof.description }}
       </div>
     </div>
   </div>
 {% endfor %}
+</div>
+<div class="row">
+    <div class="col-md-12 pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a class="pag" href="?page=1">&laquo;</a>
+                <a class="pag" href="?page={{ page_obj.previous_page_number }}">назад</a>
+            {% endif %}
+
+            <span class="current pag">
+                {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a class="pag" href="?page={{ page_obj.next_page_number }}">следующая</a>
+                <a class="pag" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
 {% endblock %}

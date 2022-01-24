@@ -3,10 +3,9 @@ from django.urls import reverse
 
 
 class Department(models.Model):
-    name = models.CharField(max_length=255, verbose_name='Название отдела')
-    slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name='url')
-    date_create = models.DateField(auto_now_add=True, verbose_name='Дата создания отдела')
+    name = models.CharField(max_length=255, unique=True, verbose_name='Название отдела')
     description = models.TextField(blank=True, verbose_name='Дополнительная информация')
+    date_create = models.DateField(auto_now_add=True, verbose_name='Дата создания отдела')
 
     def __str__(self):
         return self.name
@@ -18,7 +17,7 @@ class Department(models.Model):
 
 
 class Position(models.Model):
-    name = models.CharField(max_length=255, verbose_name='Должность')
+    name = models.CharField(max_length=255, unique=True, verbose_name='Должность')
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name='url')
     description = models.TextField(blank=True, verbose_name='Описание')
 
@@ -48,7 +47,3 @@ class Employee(models.Model):
         verbose_name = 'Сотрудник'
         verbose_name_plural = 'Сотрудники'
         ordering = ['-employment_date']
-
-
-
-

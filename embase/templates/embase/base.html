@@ -17,8 +17,7 @@
 
   </head>
   <body>
-
-    <div class="container-fluid">
+  <div class="container-fluid">
 	<div class="row head">
 		<div class="col-md-4">
             <a id="title" href="#">База сотрудников предприятия</a>
@@ -39,28 +38,28 @@
 		</div>
 		<div class="col-md-4">
 			<h3 class="text-center">
-				<a href="#">Отделы</a>
+				<a href="{% url 'departments' %}">Отделы</a>
 			</h3>
 		</div>
 		<div class="col-md-4">
 			<h3 class="text-center">
-				<a href="#">Справочник должностей</a>
+				<a href="{% url 'professions' %}">Справочник должностей</a>
 			</h3>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row content">
 		<div class="col-md-12">
             {% block content %}
             {% endblock %}
         </div>
 	</div>
-	<div class="row">
+	<div class="row footer">
 		<div class="col-md-12">
 			<div>Anatoli Piven</div>
             <div>sid_tn@tut.by</div>
             <div>Test task for nyblecraft.com</div>
         </div>
 	</div>
-</div>
+  </div>
   </body>
 </html>

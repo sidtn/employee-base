@@ -1,0 +1,23 @@
+{% extends 'embase/base.html' %}
+
+{% block content %}
+<div class="row form-block">
+  <div class="col-md-12">
+    <h1>Добавить отдел</h1>
+
+    <form action="{% url 'add_department' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-error">{{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+        <p class="form-label">{{ f.label }}:</p>
+        <p class="form-input">{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+        <button type="submit">Добавить</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
