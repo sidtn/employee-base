@@ -7,7 +7,7 @@ PASSWORD="password"
 python3 -m venv venv
 
 activate () {
-  . ../.venv/bin/activate
+  . ./.venv/bin/activate
 }
 
 python3 -m pip install -r requirements.txt
