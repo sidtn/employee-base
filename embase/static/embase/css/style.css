@@ -109,3 +109,35 @@ a:hover {
     padding: 0px;
     margin: 0px;
 }
+
+.link-del {
+    color: red;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.link-det {
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.link-upd {
+    color: blue;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.empl-card {
+    border: 2px solid black;
+    font-size: 30px;
+    padding: 0px 0px 10px 10px;
+}
+
+#login {
+    padding: 300px;
+}
+#login-title {
+    padding: 0px 0px 30px;
+    font-size: 30px;
+    color: #799CAB;
+}

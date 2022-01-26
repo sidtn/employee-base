@@ -20,20 +20,20 @@
   <div class="container-fluid">
 	<div class="row head">
 		<div class="col-md-4">
-            <a id="title" href="#">База сотрудников предприятия</a>
+            <a id="title" href="{% url 'employees' %}">База сотрудников предприятия</a>
 		</div>
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4">
             <div class="text-right">
-                <a id="exit" href="#">Выйти</a>
+                <a id="exit" href="{% url 'logout' %}">Выйти</a>
             </div>
 		</div>
 	</div>
 	<div class="row nav">
 		<div class="col-md-4">
 			<h3 class="text-center">
-                <a href="#">Сотрудники</a>
+                <a href="{% url 'employees' %}">Сотрудники</a>
 			</h3>
 		</div>
 		<div class="col-md-4">

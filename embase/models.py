@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 
 class Department(models.Model):
@@ -33,9 +34,9 @@ class Position(models.Model):
 class Employee(models.Model):
     name = models.CharField(max_length=255, verbose_name='ФИО сотрудника')
     slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name='url')
-    position = models.ForeignKey(Position, on_delete=models.PROTECT, verbose_name='Должность')
     department = models.ForeignKey(Department, on_delete=models.PROTECT, verbose_name='Отдел')
-    employment_date = models.DateField(auto_now_add=True, verbose_name='Дата приема на работу')
+    position = models.ForeignKey(Position, on_delete=models.PROTECT, verbose_name='Должность')
+    employment_date = models.DateField(default=date.today, verbose_name='Дата приема на работу')
 
     def __str__(self):
         return f'{self.name} - {self.employment_date}'

@@ -1,0 +1,21 @@
+{% extends 'embase/base.html' %}
+
+{% block content %}
+<div class="row form-block">
+  <div class="col-md-5 empl-card">
+      <p>ФИО - {{ object.name }}</p>
+      <p>Отдел - {{ object.department }}</p>
+      <p>Должность - {{ object.position }}</p>
+      <p>Дата приема на работу - {{ object.employment_date}}</p>
+      <p>Стаж работы на предприятии, лет - {{ years }}</p>
+      <div class="row">
+        <div class="col-md-4">
+          <a class="link-upd" href="/employees/edit/{{ employee.slug }}/">Редактировать</a>
+        </div>
+        <div class="col-md-2">
+          <a class="link-del" href="/employees/delete/{{ employee.slug }}/">Удалить</a>
+        </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
