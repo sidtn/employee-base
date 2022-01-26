@@ -1,12 +1,11 @@
 Тестовое задание База сотрудников
 
-Запуск приложения:
+Запуск приложения:  
 1. Клонируем репозиторий и переходим в папку проекта
-2. Запускаем базу в Docker контейнере
-  sudo docker-compose up -d
-3. Запускаем скрипт runapp.sh
-  sudo chmod +x ./runapp.sh
-  ./runapp.sh
+2. Запускаем базу в Docker контейнере  
+<code>sudo docker-compose up -d</code>
+3. Запускаем скрипт runapp.sh   
+  <code>sudo chmod a+x && ./runapp.sh</code>
 
-user: admin
+user: admin  
 password: password
