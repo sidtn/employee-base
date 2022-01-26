@@ -4,7 +4,8 @@ ADMIN_NAME="admin"
 ADMIN_EMAIL="admin@myproject.com"
 PASSWORD="password"
 
-python3 -m venv ../venv
+python3 -m venv venv
+source venv/bin/activte
 python3 -m pip install -r requirements.txt
 python3 manage.py makemigrations
 python3 manage.py migrate
