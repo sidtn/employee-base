@@ -17,6 +17,11 @@ class Professions(LoginRequiredMixin, ListView):
     context_object_name = 'professions'
     template_name = 'embase/professions.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Справочник должностей'
+        return context
+
 
 class Employees(LoginRequiredMixin, ListView):
     login_url = 'login'
@@ -24,6 +29,11 @@ class Employees(LoginRequiredMixin, ListView):
     model = Employee
     context_object_name = 'employees'
     template_name = 'embase/employees.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Сотрудники'
+        return context
 
 
 class EmployeeCard(LoginRequiredMixin, DetailView):
@@ -36,6 +46,7 @@ class EmployeeCard(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         how_long_works = date.today().year - self.get_object().employment_date.year
         context['years'] = how_long_works
+        context['title'] = self.get_object().name
         return context
 
 
@@ -44,6 +55,11 @@ class AddEmployee(LoginRequiredMixin, CreateView):
     form_class = AddEmployeeForm
     template_name = 'embase/add_employee.html'
     success_url = reverse_lazy('employees')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Добавление сотрудника'
+        return context
 
 
 class UpdateEmployee(LoginRequiredMixin, UpdateView):
@@ -54,6 +70,11 @@ class UpdateEmployee(LoginRequiredMixin, UpdateView):
     slug_url_kwarg = 'empl_slug'
     success_url = reverse_lazy('employees')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Обновление данных сотрудника'
+        return context
+
 
 class DeleteEmployee(LoginRequiredMixin, DeleteView):
     login_url = 'login'
@@ -61,6 +82,11 @@ class DeleteEmployee(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('employees')
     template_name = 'embase/delete_employee.html'
     slug_url_kwarg = 'empl_slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Удаление сотрудника'
+        return context
 
 
 class Departments(LoginRequiredMixin, ListView):
@@ -70,12 +96,22 @@ class Departments(LoginRequiredMixin, ListView):
     context_object_name = 'departments'
     template_name = 'embase/departments.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Отделы'
+        return context
+
 
 class AddDepartment(LoginRequiredMixin, CreateView):
     login_url = 'login'
     form_class = AddDepartmentForm
     template_name = 'embase/add_department.html'
     success_url = reverse_lazy('departments')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Добавление отдела'
+        return context
 
 
 class DeleteDepartment(LoginRequiredMixin, DeleteView):
@@ -90,7 +126,7 @@ class DeleteDepartment(LoginRequiredMixin, DeleteView):
         len_of_employees_query = len(query_set_employees_of_department)
         context['empls_of_depart'] = query_set_employees_of_department
         context['len_empl'] = len_of_employees_query
-        print(context['len_empl'])
+        context['title'] = 'Удаление отдела'
         return context
 
 
