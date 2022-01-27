@@ -5,7 +5,7 @@
 2. Запускаем базу в Docker контейнере  
 <code>sudo docker-compose up -d</code>
 3. Запускаем скрипт runapp.sh   
-  <code>sudo chmod a+x && ./runapp.sh</code>
+  <code>sudo chmod a+x runapp.sh && ./runapp.sh</code>
 
 user: admin  
 password: password
